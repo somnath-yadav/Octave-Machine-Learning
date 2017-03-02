@@ -79,7 +79,7 @@ load('ex7data2.mat');
 
 % Settings for running K-Means
 K = 3;
-max_iters = 10;
+max_iters = 1;
 
 % For consistency, here we set centroids to specific values
 % but in practice you want to generate them automatically, such as by
@@ -123,8 +123,8 @@ X = reshape(A, img_size(1) * img_size(2), 3);
 
 % Run your K-Means algorithm on this data
 % You should try different values of K and max_iters here
-K = 32; 
-max_iters = 20;
+K = 8; 
+max_iters = 1;
 
 % When using K-Means, it is important the initialize the centroids
 % randomly. 
@@ -136,7 +136,6 @@ initial_centroids = kMeansInitCentroids(X, K);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
 
 %% ================= Part 5: Image Compression ======================
 %  In this part of the exercise, you will use the clusters of K-Means to
@@ -166,6 +165,7 @@ title('Original');
 % Display compressed image side by side
 subplot(1, 2, 2);
 imagesc(X_recovered)
+
 title(sprintf('Compressed, with %d colors.', K));
 
 
